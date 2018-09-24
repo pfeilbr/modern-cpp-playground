@@ -116,7 +116,7 @@ static void random_example()
 static void sort_example()
 {
     int arr[]{2, 1, 3, 9, 4};
-    sort(arr, arr + (sizeof(arr) / sizeof(int)));
+    sort(begin(arr), end(arr));
     cout << "sorted arr: ";
     for (const int &i : arr)
     {
