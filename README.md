@@ -10,5 +10,8 @@ based on [nesteruk/ModernCpp](https://github.com/nesteruk/ModernCpp)
 build and run on file contents change (live reload)
 
 ```sh
+# start watcher
 ./scripts/build-and-run-on-change playground.cpp
+
+# edit and save `playground.cpp` for live reload
 ```
