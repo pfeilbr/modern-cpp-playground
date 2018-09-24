@@ -124,6 +124,11 @@ static void sort_example()
     }
 }
 
+static void pair_example() {
+    pair<string,int> name_age{"brian", 40};
+    cout << "name: " << name_age.first << ", age: " << name_age.second << endl;
+}
+
 int main()
 {
     cout << "\n--- playground ---\n\n";
@@ -135,6 +140,7 @@ int main()
     // random_example();
     // sort_example();
     // virtual_method_example();
+    // pair_example();
 
     return 0;
 }
