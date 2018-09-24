@@ -1,0 +1,38 @@
+#!/bin/bash
+#set -euo pipefail
+
+echo "running ..."
+
+function abspath {
+    if [[ -d "$1" ]]
+    then
+        pushd "$1" >/dev/null
+        pwd
+        popd >/dev/null
+    elif [[ -e $1 ]]
+    then
+        pushd "$(dirname "$1")" >/dev/null
+        echo "$(pwd)/$(basename "$1")"
+        popd >/dev/null
+    else
+        echo "$1" does not exist! >&2
+        return 127
+    fi
+}
+
+scriptdir=$(cd $(dirname $0) && pwd)
+source "$scriptdir/env"
+entry_file_relative_path=$1
+entry_file_path=$(abspath $entry_file_relative_path)
+entry_file_name=$(basename $entry_file_path)
+entry_base_file_name="${entry_file_name%.*}"
+build_dir_path=$(abspath $BUILD_DIR)
+# echo $entry_file_path
+# echo $entry_file_name
+# echo $entry_base_file_name
+# echo $V8_ROOT
+
+output_binary_file_path=$build_dir_path/$entry_base_file_name
+pushd $build_dir_path >/dev/null
+./$entry_base_file_name
+popd >/dev/null
