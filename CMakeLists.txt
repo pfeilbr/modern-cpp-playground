@@ -5,11 +5,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 set(SOURCE_FILES main.cpp AutoDecltype.cpp)
 
-include_directories("/usr/local/Cellar/boost/1.65.1/include")
-link_directories("/usr/local/Cellar/boost/1.65.1/lib")
+include_directories("/usr/local/Cellar/boost/1.72.0/include")
+link_directories("/usr/local/Cellar/boost/1.72.0/lib")
 
-include_directories("/usr/local/Cellar/sqlite/3.22.0/include")
-link_directories("/usr/local/Cellar/sqlite/3.22.0/lib")
+include_directories("/usr/local/Cellar/sqlite/3.30.1/include")
+link_directories("/usr/local/Cellar/sqlite/3.30.1/lib")
 
 add_executable(ModernCpp ${SOURCE_FILES} Headers.h NullPtr.cpp AutoDecltype.cpp
     RangeBasedFor.cpp Lambdas.cpp StronglyTypedEnum.cpp

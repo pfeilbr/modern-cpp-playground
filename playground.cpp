@@ -6,7 +6,7 @@ namespace fs = boost::filesystem;
 
 class Animal
 {
-  public:
+public:
     virtual void speak()
     {
         cout << "Animal::speak" << endl;
@@ -15,7 +15,7 @@ class Animal
 
 class Cow : public Animal
 {
-  public:
+public:
     void speak() override
     {
         cout << "Cow::speak" << endl;
@@ -124,8 +124,9 @@ static void sort_example()
     }
 }
 
-static void pair_example() {
-    pair<string,int> name_age{"brian", 40};
+static void pair_example()
+{
+    pair<string, int> name_age{"brian", 40};
     cout << "name: " << name_age.first << ", age: " << name_age.second << endl;
 }
 
@@ -133,7 +134,7 @@ int main()
 {
     cout << "\n--- playground ---\n\n";
     // unique_pointer_example();
-    // lambda_example();
+    //lambda_example();
     // vector_for_example();
     // filesystem_example();
     // sqlite_example();
